@@ -1,0 +1,10 @@
+[package]
+name = "likejs"
+version = "0.1.1"
+edition = "2021"
+description = "like js!"
+license = "MIT"
+repository = "https://github.com/hotdogking2007/likejs"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
