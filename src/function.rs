@@ -1,8 +1,12 @@
 pub mod function{
     /**
-     * 자바스크립트 arrow 함수 구현
+     * JavaScript arrow function implementation
      * ```
-     * let f = arrow!(() => "Hello, World!".to_string())
+     * let f = likejs::arrow!(() => {"Hello, World!".to_string()});
+     * ```
+     * or
+     * ```
+     * let f = likejs::arrow!(() => "Hello, World!".to_string());
      * ```
      */
     #[macro_export]
@@ -15,17 +19,18 @@ pub mod function{
         };
     }
     /**
-     * 자바스크립트 함수 구현
+     * JavaScript function implementation
      * ```
-     * normal!(function add(a, b){
+     * likejs::normal_function!(function add(a, b){
      *     a+b
-     * })
+     * });
+     * let int = add(12,13);
      * ```
      */
     #[macro_export]
-    macro_rules! normal {
+    macro_rules! normal_function {
         (function $name:ident($($vars:ident),*) $stat:block) => {
-            let $name = |$($vars),*| {$stat};
+            let $name = |$($vars: _),*| {$stat};
         }
     }
 }
